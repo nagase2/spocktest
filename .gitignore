@@ -1,0 +1,12 @@
+/logs
+/build
+/bin
+/c:*
+/.settings
+/.project
+/.classpath
+/target
+node_modules
+tmp/
+.gradle/**
+
