@@ -20,7 +20,7 @@ class CalculatorSpec extends Specification {
 
 		then:
 		result == expected
-		println result + "x"
+		//println result + "x"
 
 		where:
 		a  | b  | expected
@@ -66,7 +66,22 @@ class CalculatorSpec extends Specification {
 		Library library = Mock()
 		when:
 		def result = library.someMethod1()
-		println result
+		//println result
+		
+		then:
+		1 * library.someMethod1()  >> 332
+		result == 332
+	}
+	def testCombine2(){
+		setup:
+		Library library = Mock()
+		def calc = new Calculator()
+		library.value =999
+		
+		when:
+		def result = library.someMethod1()
+		println calc.combine(10,20)
+		
 		then:
 		1 * library.someMethod1()  >> 332
 		result == 332

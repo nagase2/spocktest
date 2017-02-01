@@ -6,10 +6,15 @@ package abc;
  * @author yoshi, @date 2/1/17 12:11 AM
  */
 public class Library {
+	private int value;
+	
+	public Library(int a){
+		this.value = a;
+	}
     public boolean someLibraryMethod() {
         return true;
     }
     public int someMethod1(){
-    	return 1000;
+    	return value;
     }
 }
