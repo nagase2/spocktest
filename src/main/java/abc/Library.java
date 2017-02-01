@@ -9,4 +9,7 @@ public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
+    public int someMethod1(){
+    	return 1000;
+    }
 }

@@ -59,4 +59,15 @@ class CalculatorSpec extends Specification {
 	  b << [4, 5, 6]
 	}
 	
+	def testCombine(){
+		setup:
+			def bean = Mock(Library)
+		when:
+			def result = bean.someMethod1()
+			println result
+		then:
+			1 * bean.someMethod1() >> 33
+			result == 33
+	}
+	
 }

@@ -11,3 +11,5 @@ tmp/
 .gradle/**
 .gradle
 
+/.gradle
+build

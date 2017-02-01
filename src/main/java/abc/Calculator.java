@@ -8,4 +8,10 @@ public class Calculator {
   public int extract(int a,int b){
 	  return a-b;
   }
+  public int combine(int a, int b){
+	  Library lib = new Library();
+	  
+	 return lib.someMethod1()+a+b;
+	 
+  }
 }
