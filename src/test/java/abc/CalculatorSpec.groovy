@@ -7,7 +7,9 @@ import spock.lang.Unroll
 
 
 class CalculatorSpec extends Specification {
-
+	def setup(){
+		//println "a"
+	}
 	@Unroll
 	def addoperatorTest() {
 		given:
@@ -18,6 +20,7 @@ class CalculatorSpec extends Specification {
 
 		then:
 		result == expected
+		println result + "x"
 
 		where:
 		a  | b  | expected
@@ -30,10 +33,10 @@ class CalculatorSpec extends Specification {
 	def "ˆø‚«ŽZ‚ÌƒeƒXƒg"() {
 		given:
 		def calc = new Calculator()
-		
+
 		when:
 		def result =calc.extract(a,b)
-		then: 
+		then:
 		result == exp
 		where:
 		a|b|exp
@@ -42,32 +45,30 @@ class CalculatorSpec extends Specification {
 		1|5|-4
 		1|1|0
 		1|1|0
-		
 	}
 	@Unroll("#a should have length #b")
 	def "name length"() {
-	  given:
-	  def calc = new Calculator()
-	//  when:
-	 // def result = calc.extract(a,b)
-	  
-	  expect:
-	  a-b == calc.extract(a,b)
-   
-	  where:
-	  a << [1,2,3]
-	  b << [4, 5, 6]
+		given:
+		def calc = new Calculator()
+		//  when:
+		// def result = calc.extract(a,b)
+
+		expect:
+		a-b == calc.extract(a,b)
+
+		where:
+		a << [1, 2, 3]
+		b << [4, 5, 6]
 	}
-	
+
 	def testCombine(){
 		setup:
-			def bean = Mock(Library)
+		Library library = Mock()
 		when:
-			def result = bean.someMethod1()
-			println result
+		def result = library.someMethod1()
+		println result
 		then:
-			1 * bean.someMethod1() >> 33
-			result == 33
+		1 * library.someMethod1()  >> 332
+		result == 332
 	}
-	
 }
